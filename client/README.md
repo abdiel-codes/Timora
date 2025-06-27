@@ -1,12 +1,30 @@
-# React + Vite
+# Timora Frontend 🧩✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the Timora frontend, a colaborative task management platform for personal and group tasks.
 
-Currently, two official plugins are available:
+## 🌐 Main Routes and Pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Ruta                 | Página renderizada       | Descripción                           |
+|----------------------|---------------------------|----------------------------------------|
+| `/tasks`             | `Tasks.jsx`               | Personal tasks with filters and cards |
+| `/groups`            | `Groups.jsx`              | Search and join groups                |
+| `/groups/:groupId`   | `GroupDashboard.jsx`      | Internal view of active group         |
+| `/progress`          | `Progress.jsx`            | Personal productivity graph           |
+| `/profile`           | `Profile.jsx`             | User profile                          |
+| `/settings`          | `Settings.jsx`            | Dark mode toggle and other settings   |
 
-## Expanding the ESLint configuration
+## 🧩 Componentes destacados
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `Sidebar.jsx` & `HeaderBar.jsx`: Global navigation
+- `TaskCard.jsx`: card with task info and actions
+- `StatusFilters.jsx`: filters for task status (`Pending`, `In Progress`, `Done`)
+- `GroupInfoCard.jsx`: Basic information about a found group
+- `GroupMemberPanel.jsx`: List of group members found
+- `JoinGroupButton.jsx`: Contextual button to join a group
+- `DateBanner.jsx`: Date and tasks count banner
+
+## ⚙️ Key Technologies
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/) for bundling
+- [Tailwind](https://tailwindcss.com/) for styling
