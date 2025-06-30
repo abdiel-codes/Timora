@@ -13,7 +13,6 @@ const registerController = async (req, res) => {
     const [userFound] = await pool.query("SELECT * FROM users WHERE email = ?", [email])
     const [usernameTaken] = await pool.query("SELECT * FROM users WHERE username = ?", [username])
 
-
     if (userFound.length > 0) {
       return res.status(400).json({ message: "Email already exists" })
     }
@@ -24,7 +23,7 @@ const registerController = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10)
 
-    await pool.query("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", [username, email, hashedPassword])
+    await pool.query("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)", [username, email, hashedPassword])
 
     return res.status(201).json({ message: "User created successfully" })
 
